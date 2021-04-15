@@ -2,7 +2,7 @@ Package: arctools
 Type: Package
 Title: Processing and Physical Activity Summaries of Minute Level
         Activity Data
-Version: 1.1.0
+Version: 1.1.2
 Authors@R: c(
   person("Marta", "Karas", email = "marta.karass@gmail.com", role = c("aut", "cre"), 
       comment = c(ORCID = "0000-0001-5889-3970")),
@@ -21,10 +21,10 @@ Suggests: testthat, data.table, dplyr, knitr, rmarkdown, ggplot2, covr
 Imports: lubridate, runstats
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2021-01-09 03:41:26 UTC; martakaras
+Packaged: 2021-04-14 23:14:52 UTC; martakaras
 Author: Marta Karas [aut, cre] (<https://orcid.org/0000-0001-5889-3970>),
   Jacek Urbanek [aut] (<https://orcid.org/0000-0002-1890-8899>),
   Jennifer Schrack [aut] (<https://orcid.org/0000-0001-9244-9267>)
 Maintainer: Marta Karas <marta.karass@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-01-10 01:10:06 UTC
+Date/Publication: 2021-04-15 04:30:02 UTC
