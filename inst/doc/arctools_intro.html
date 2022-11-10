@@ -14,7 +14,19 @@
 
 <title>arctools_intro</title>
 
-<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -24,6 +36,7 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
+
 
 
 <style type="text/css">
@@ -125,7 +138,187 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
 
 
 
@@ -142,39 +335,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="TOC">
 <ul>
-<li><a href="#using-arctools-package-to-compute-physical-activity-summaries">Using <code>arctools</code> package to compute physical activity summaries</a>
+<li><a href="#using-arctools-package-to-compute-physical-activity-summaries" id="toc-using-arctools-package-to-compute-physical-activity-summaries">Using
+<code>arctools</code> package to compute physical activity summaries</a>
 <ul>
-<li><a href="#reading-pa-data">Reading PA data</a></li>
-<li><a href="#computing-summaries-with-activity_stats-method">Computing summaries with <code>activity_stats</code> method</a></li>
-<li><a href="#output-explained">Output explained</a></li>
+<li><a href="#reading-pa-data" id="toc-reading-pa-data">Reading PA
+data</a></li>
+<li><a href="#computing-summaries-with-activity_stats-method" id="toc-computing-summaries-with-activity_stats-method">Computing
+summaries with <code>activity_stats</code> method</a></li>
+<li><a href="#output-explained" id="toc-output-explained">Output
+explained</a></li>
 </ul></li>
-<li><a href="#additionalactivity_stats-method-options">Additional<code>activity_stats</code> method options</a>
+<li><a href="#additionalactivity_stats-method-options" id="toc-additionalactivity_stats-method-options">Additional<code>activity_stats</code>
+method options</a>
 <ul>
-<li><a href="#summarizing-pa-within-a-fixed-set-of-minutes-only">Summarizing PA within a fixed set of minutes only</a></li>
-<li><a href="#summarizing-pa-within-a-subset-of-weekdays-only">Summarizing PA within a subset of weekdays only</a></li>
-<li><a href="#summarizing-pa-with-a-fixed-set-of-minutes-excluded">Summarizing PA with a fixed set of minutes excluded</a></li>
-<li><a href="#summarizing-pa-with-in-bed-time-excluded">Summarizing PA with in-bed time excluded</a></li>
+<li><a href="#summarizing-pa-within-a-fixed-set-of-minutes-only" id="toc-summarizing-pa-within-a-fixed-set-of-minutes-only">Summarizing
+PA within a fixed set of minutes only</a></li>
+<li><a href="#summarizing-pa-within-a-subset-of-weekdays-only" id="toc-summarizing-pa-within-a-subset-of-weekdays-only">Summarizing PA
+within a subset of weekdays only</a></li>
+<li><a href="#summarizing-pa-with-a-fixed-set-of-minutes-excluded" id="toc-summarizing-pa-with-a-fixed-set-of-minutes-excluded">Summarizing
+PA with a fixed set of minutes excluded</a></li>
+<li><a href="#summarizing-pa-with-in-bed-time-excluded" id="toc-summarizing-pa-with-in-bed-time-excluded">Summarizing PA with
+in-bed time excluded</a></li>
 </ul></li>
-<li><a href="#components-of-activity_stats-method">Components of <code>activity_stats</code> method</a>
+<li><a href="#components-of-activity_stats-method" id="toc-components-of-activity_stats-method">Components of
+<code>activity_stats</code> method</a>
 <ul>
-<li><a href="#expand-the-length-of-minute-level-ac-vector-to-integer-number-of-full-24-hour-periods-by-na-padding-with-midnight_to_midnight">Expand the length of minute-level AC vector to integer number of full 24-hour periods by NA-padding with <code>midnight_to_midnight</code></a></li>
-<li><a href="#get-wearnon-wear-flag-with-get_wear_flag">Get wear/non-wear flag with <code>get_wear_flag</code></a></li>
-<li><a href="#get-validnon-valid-day-flag-with-get_valid_day_flag">Get valid/non-valid day flag with <code>get_valid_day_flag</code></a></li>
-<li><a href="#impute-missing-data-with-impute_missing_data">Impute missing data with <code>impute_missing_data</code></a></li>
-<li><a href="#create-pa-characteristics-with-summarize_pa">Create PA characteristics with <code>summarize_PA</code></a></li>
+<li><a href="#expand-the-length-of-minute-level-ac-vector-to-integer-number-of-full-24-hour-periods-by-na-padding-with-midnight_to_midnight" id="toc-expand-the-length-of-minute-level-ac-vector-to-integer-number-of-full-24-hour-periods-by-na-padding-with-midnight_to_midnight">Expand
+the length of minute-level AC vector to integer number of full 24-hour
+periods by NA-padding with <code>midnight_to_midnight</code></a></li>
+<li><a href="#get-wearnon-wear-flag-with-get_wear_flag" id="toc-get-wearnon-wear-flag-with-get_wear_flag">Get wear/non-wear flag
+with <code>get_wear_flag</code></a></li>
+<li><a href="#get-validnon-valid-day-flag-with-get_valid_day_flag" id="toc-get-validnon-valid-day-flag-with-get_valid_day_flag">Get
+valid/non-valid day flag with <code>get_valid_day_flag</code></a></li>
+<li><a href="#impute-missing-data-with-impute_missing_data" id="toc-impute-missing-data-with-impute_missing_data">Impute missing
+data with <code>impute_missing_data</code></a></li>
+<li><a href="#create-pa-characteristics-with-summarize_pa" id="toc-create-pa-characteristics-with-summarize_pa">Create PA
+characteristics with <code>summarize_PA</code></a></li>
 </ul></li>
 </ul>
 </div>
 
-<p>The <code>arctools</code> package allows to generate summaries of the minute-level physical activity (PA) data. The default parameters are chosen for the Actigraph activity counts collected with a wrist-worn device; however, the package can be used for other minute-level PA data with the corresponding timepstamps vector.</p>
-<p>Below, we demonstrate the use of <code>arctools</code> with the attached, exemplary minute-level Actigraph PA counts data.</p>
+<p>The <code>arctools</code> package allows to generate summaries of the
+minute-level physical activity (PA) data. The default parameters are
+chosen for the Actigraph activity counts collected with a wrist-worn
+device; however, the package can be used for other minute-level PA data
+with the corresponding timepstamps vector.</p>
+<p>Below, we demonstrate the use of <code>arctools</code> with the
+attached, exemplary minute-level Actigraph PA counts data.</p>
 <div id="using-arctools-package-to-compute-physical-activity-summaries" class="section level1">
-<h1>Using <code>arctools</code> package to compute physical activity summaries</h1>
-<p>The <code>arctools</code> functions process one file with accelerometry data at a time.</p>
+<h1>Using <code>arctools</code> package to compute physical activity
+summaries</h1>
+<p>The <code>arctools</code> functions process one file with
+accelerometry data at a time.</p>
 <div id="reading-pa-data" class="section level3">
 <h3>Reading PA data</h3>
-<p>Four CSV data sets with minute-level activity counts data are attached to the <code>arctools</code> package. The data file names are stored in <code>extdata_fnames</code> object that becomes available once the <code>arctools</code> package is loaded.</p>
-<p>Below, we defined <code>fpath</code> to be a path to one of the minute-level activity counts data files. <code>fread()</code> reads minute-level activity counts data file while conveniently skipping first few rows with meta data, and then <code>as.data.frame()</code> converts the read data into a data frame object. The read-in data is assigned to <code>dat</code> variable. <code>head()</code> and <code>tail()</code> get first few and last few rows of <code>dat</code>, respectively.</p>
+<p>Four CSV data sets with minute-level activity counts data are
+attached to the <code>arctools</code> package. The data file names are
+stored in <code>extdata_fnames</code> object that becomes available once
+the <code>arctools</code> package is loaded.</p>
+<p>Below, we defined <code>fpath</code> to be a path to one of the
+minute-level activity counts data files. <code>fread()</code> reads
+minute-level activity counts data file while conveniently skipping first
+few rows with meta data, and then <code>as.data.frame()</code> converts
+the read data into a data frame object. The read-in data is assigned to
+<code>dat</code> variable. <code>head()</code> and <code>tail()</code>
+get first few and last few rows of <code>dat</code>, respectively.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arctools)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -197,8 +422,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>Axis1</code> - sensor’s X axis minute-level counts data,</li>
 <li><code>Axis2</code> - sensor’s Y axis minute-level counts data,</li>
 <li><code>Axis3</code> - sensor’s Z axis minute-level counts data,</li>
-<li><code>vectormagnitude</code> - minute-level counts data defined as <code>sqrt(Axis1^2 + Axis2^2 + Axis3^2)</code>,</li>
-<li><code>timestamp</code> - time-stamps corresponding to minute-level measures.</li>
+<li><code>vectormagnitude</code> - minute-level counts data defined as
+<code>sqrt(Axis1^2 + Axis2^2 + Axis3^2)</code>,</li>
+<li><code>timestamp</code> - time-stamps corresponding to minute-level
+measures.</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot activity counts</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Format timestamp data column from character to POSIXct object</span></span>
@@ -224,39 +451,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="output-explained" class="section level3">
 <h3>Output explained</h3>
-<p>To explain <code>activity_stats</code> method output, we first define the terms <em>activity count</em>, <em>active/non-active minute</em>, <em>active/non-active bout</em>, and <em>valid day</em>.</p>
+<p>To explain <code>activity_stats</code> method output, we first define
+the terms <em>activity count</em>, <em>active/non-active minute</em>,
+<em>active/non-active bout</em>, and <em>valid day</em>.</p>
 <ul>
 <li>Activity count (AC) - a minute-level metric of PA volume.</li>
-<li>Active minute - a minute with AC equal or above a fixed threshold; for wrist-worn Actigraph<br />
+<li>Active minute - a minute with AC equal or above a fixed threshold;
+for wrist-worn Actigraph<br />
 we use AC&gt;=1853 (method’s default).</li>
-<li>Non-active (sedentary) minute - a minute with AC below a fixed threshold; for wrist-worn Actigraph<br />
+<li>Non-active (sedentary) minute - a minute with AC below a fixed
+threshold; for wrist-worn Actigraph<br />
 we use AC&lt;1853 (method’s default).</li>
-<li>Active bout - a sequence of 1 or more consecutive active minute(s).</li>
-<li>Non-active bout - a sequence of 1 or more consecutive non-active minute(s).</li>
-<li>Valid day - a day with no more than 10% of the non-wear time (see <em>Details</em> in <code>?activity_stats</code>).</li>
+<li>Active bout - a sequence of 1 or more consecutive active
+minute(s).</li>
+<li>Non-active bout - a sequence of 1 or more consecutive non-active
+minute(s).</li>
+<li>Valid day - a day with no more than 10% of the non-wear time (see
+<em>Details</em> in <code>?activity_stats</code>).</li>
 </ul>
 <p>Meta information:</p>
 <ul>
-<li><code>n_days</code> - number of days (unique day dates) of data collection.</li>
-<li><code>n_valid_days</code> - number of days (unique day dates) of data collection determined as valid days.</li>
-<li><code>wear_time_on_valid_days</code> - average number of wear-time minutes across valid days.</li>
+<li><code>n_days</code> - number of days (unique day dates) of data
+collection.</li>
+<li><code>n_valid_days</code> - number of days (unique day dates) of
+data collection determined as valid days.</li>
+<li><code>wear_time_on_valid_days</code> - average number of wear-time
+minutes across valid days.</li>
 </ul>
 <p>Summaries of PA volumes metrics:</p>
 <ul>
-<li><code>tac</code> - TAC, Total activity counts per day - sum of AC measured on valid days divided by the number of valid days.</li>
-<li><code>tlac</code> - TLAC, Total-log activity counts per day - sum of log(1+AC) measured on valid days divided by the number of valid days. Here ‘log’ denotes the natural logarithm.</li>
-<li><code>ltac</code> - LTAC, Log-total activity counts - natural logarithm of TAC.</li>
-<li><code>time_spent_active</code> - Average number of active minutes per valid day.</li>
-<li><code>time_spent_nonactive</code> - Average number of sedentary minutes per valid day.</li>
+<li><code>tac</code> - TAC, Total activity counts per day - sum of AC
+measured on valid days divided by the number of valid days.</li>
+<li><code>tlac</code> - TLAC, Total-log activity counts per day - sum of
+log(1+AC) measured on valid days divided by the number of valid days.
+Here ‘log’ denotes the natural logarithm.</li>
+<li><code>ltac</code> - LTAC, Log-total activity counts - natural
+logarithm of TAC.</li>
+<li><code>time_spent_active</code> - Average number of active minutes
+per valid day.</li>
+<li><code>time_spent_nonactive</code> - Average number of sedentary
+minutes per valid day.</li>
 </ul>
 <p>Summaries of PA fragmentation metrics:</p>
 <ul>
-<li><code>astp</code> - ASTP, active to sedentary transition probability on valid days.</li>
-<li><code>satp</code> - SATP, sedentary to active transition probability on valid days.</li>
-<li><code>no_of_active_bouts</code> - Average number of active minutes per valid day.</li>
-<li><code>no_of_nonactive_bouts</code> - Average number of sedentary minutes per valid day.</li>
-<li><code>mean_active_bout</code> - Average duration (in minutes) of an active bout on valid days.</li>
-<li><code>mean_nonactive_bout</code> - Average duration (in minutes) of a sedentary bout on valid days.</li>
+<li><code>astp</code> - ASTP, active to sedentary transition probability
+on valid days.</li>
+<li><code>satp</code> - SATP, sedentary to active transition probability
+on valid days.</li>
+<li><code>no_of_active_bouts</code> - Average number of active minutes
+per valid day.</li>
+<li><code>no_of_nonactive_bouts</code> - Average number of sedentary
+minutes per valid day.</li>
+<li><code>mean_active_bout</code> - Average duration (in minutes) of an
+active bout on valid days.</li>
+<li><code>mean_nonactive_bout</code> - Average duration (in minutes) of
+a sedentary bout on valid days.</li>
 </ul>
 </div>
 </div>
@@ -264,7 +513,11 @@ we use AC&lt;1853 (method’s default).</li>
 <h1>Additional<code>activity_stats</code> method options</h1>
 <div id="summarizing-pa-within-a-fixed-set-of-minutes-only" class="section level3">
 <h3>Summarizing PA within a fixed set of minutes only</h3>
-<p>The <code>subset_minutes</code> argument allows to specify a subset of a day’s minutes where activity summaries should be computed. There are 1440 minutes in a 24-hour day where <code>1</code> denotes 1st minute of the day (from 00:00 to 00:01), and <code>1440</code> denotes the last minute (from 23:59 to 00:00).</p>
+<p>The <code>subset_minutes</code> argument allows to specify a subset
+of a day’s minutes where activity summaries should be computed. There
+are 1440 minutes in a 24-hour day where <code>1</code> denotes 1st
+minute of the day (from 00:00 to 00:01), and <code>1440</code> denotes
+the last minute (from 23:59 to 00:00).</p>
 <p>Here, we summarize PA observed between 12:00 AM and 6:00 AM.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>subset_12am_6am <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">:</span> (<span class="dv">6</span> <span class="sc">*</span> <span class="dv">1440</span><span class="sc">/</span><span class="dv">24</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">activity_stats</span>(acc, acc_ts, <span class="at">subset_minutes =</span> subset_12am_6am) </span>
@@ -278,7 +531,9 @@ we use AC&lt;1853 (method’s default).</li>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                              7                  1.791667</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   mean_nonactive_bout_0to6only</span></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                     49.89286</span></span></code></pre></div>
-<p>By default, column names have a suffix added to denote that a subset of minutes was used (here, <code>_0to6only</code>). This can be disabled by setting <code>adjust_out_colnames</code> to <code>FALSE</code>.</p>
+<p>By default, column names have a suffix added to denote that a subset
+of minutes was used (here, <code>_0to6only</code>). This can be disabled
+by setting <code>adjust_out_colnames</code> to <code>FALSE</code>.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>subset_12am_6am <span class="ot">=</span> <span class="dv">1</span> <span class="sc">:</span> (<span class="dv">6</span><span class="sc">/</span><span class="dv">24</span> <span class="sc">*</span> <span class="dv">1440</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>subset_6am_12pm <span class="ot">=</span> (<span class="dv">6</span><span class="sc">/</span><span class="dv">24</span> <span class="sc">*</span> <span class="dv">1440</span> <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">:</span> (<span class="dv">12</span><span class="sc">/</span><span class="dv">24</span> <span class="sc">*</span> <span class="dv">1440</span>) </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>subset_12pm_6pm <span class="ot">=</span> (<span class="dv">12</span><span class="sc">/</span><span class="dv">24</span> <span class="sc">*</span> <span class="dv">1440</span> <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">:</span> (<span class="dv">18</span><span class="sc">/</span><span class="dv">24</span> <span class="sc">*</span> <span class="dv">1440</span>) </span>
@@ -313,8 +568,16 @@ we use AC&lt;1853 (method’s default).</li>
 </div>
 <div id="summarizing-pa-within-a-subset-of-weekdays-only" class="section level3">
 <h3>Summarizing PA within a subset of weekdays only</h3>
-<p>The <code>subset_weekdays</code> argument allows to specify days of a week within which activity summaries are to be computed; it takes values between 1 (Sunday) to 7 (Saturday). Default is <code>NULL</code> (all days of a week are used).</p>
-<p>Here, we summarize PA within weekday days only. <strong>Note that in the method output, the</strong> <code>n_days</code> <strong>and</strong> <code>n_valid_days</code> <strong>columns only count the days from the selected week days subset</strong>; for example, below, <code>n_days</code> number of unique day dates in data is 6 despite the range of data collection without subsetting ranges 8 days.</p>
+<p>The <code>subset_weekdays</code> argument allows to specify days of a
+week within which activity summaries are to be computed; it takes values
+between 1 (Sunday) to 7 (Saturday). Default is <code>NULL</code> (all
+days of a week are used).</p>
+<p>Here, we summarize PA within weekday days only. <strong>Note that in
+the method output, the</strong> <code>n_days</code> <strong>and</strong>
+<code>n_valid_days</code> <strong>columns only count the days from the
+selected week days subset</strong>; for example, below,
+<code>n_days</code> number of unique day dates in data is 6 despite the
+range of data collection without subsetting ranges 8 days.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># day of a week indices 2,3,4,5,6 correspond to Mon,Tue,Wed,Thu,Fri </span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>subset_weekdays <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">activity_stats</span>(acc, acc_ts, <span class="at">subset_weekdays =</span> subset_weekdays) </span>
@@ -330,7 +593,9 @@ we use AC&lt;1853 (method’s default).</li>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                                88.66667                           5.690566</span></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   mean_nonactive_bout_weekdays23456only</span></span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                              10.57143</span></span></code></pre></div>
-<p>Note the <code>subset_weekdays</code> argument can be combined with other arguments, i.e. <code>subset_minutes</code> to subset of a day’s minutes where activity summaries should be computed.</p>
+<p>Note the <code>subset_weekdays</code> argument can be combined with
+other arguments, i.e. <code>subset_minutes</code> to subset of a day’s
+minutes where activity summaries should be computed.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># day of a week indices 7,1 correspond to Sat,Sun</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>subset_weekdays <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">1</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">activity_stats</span>(acc, acc_ts, <span class="at">subset_weekdays =</span> subset_weekdays, <span class="at">subset_minutes =</span> subset_6am_12pm) </span>
@@ -355,8 +620,10 @@ we use AC&lt;1853 (method’s default).</li>
 </div>
 <div id="summarizing-pa-with-a-fixed-set-of-minutes-excluded" class="section level3">
 <h3>Summarizing PA with a fixed set of minutes excluded</h3>
-<p>The <code>exclude_minutes</code> argument allows specifying a subset of a day’s minutes excluded for computing activity summaries.</p>
-<p>Here, we summarize PA while excluding observations between 11:00 PM and 5:00 AM.</p>
+<p>The <code>exclude_minutes</code> argument allows specifying a subset
+of a day’s minutes excluded for computing activity summaries.</p>
+<p>Here, we summarize PA while excluding observations between 11:00 PM
+and 5:00 AM.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>subset_11pm_5am <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  (<span class="dv">23</span> <span class="sc">*</span> <span class="dv">1440</span><span class="sc">/</span><span class="dv">24</span> <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">:</span> <span class="dv">1440</span>,   <span class="do">## 11:00 PM - midnight</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">:</span> (<span class="dv">5</span> <span class="sc">*</span> <span class="dv">1440</span><span class="sc">/</span><span class="dv">24</span>)            <span class="do">## midnight - 5:00 AM</span></span>
@@ -375,15 +642,22 @@ we use AC&lt;1853 (method’s default).</li>
 </div>
 <div id="summarizing-pa-with-in-bed-time-excluded" class="section level3">
 <h3>Summarizing PA with in-bed time excluded</h3>
-<p>The <code>in_bed_time</code> and <code>out_bed_time</code> arguments allow to provide day-specific in-bed periods to be excluded from analysis.</p>
-<p>Here, we summarize PA excluding in-bed time estimated by ActiLife software.</p>
+<p>The <code>in_bed_time</code> and <code>out_bed_time</code> arguments
+allow to provide day-specific in-bed periods to be excluded from
+analysis.</p>
+<p>Here, we summarize PA excluding in-bed time estimated by ActiLife
+software.</p>
 <div id="actilife-estimated-in-bed-data" class="section level5">
 <h5>ActiLife-estimated in-bed data</h5>
-<p>The ActiLife-estimated in-bed data file is attached to the <code>arctools</code> package. The sleep data columns include:</p>
+<p>The ActiLife-estimated in-bed data file is attached to the
+<code>arctools</code> package. The sleep data columns include:</p>
 <ul>
-<li><code>Subject Name</code> - subject IDs corresponding to AC data, stored in <code>extdata_fnames</code>,</li>
-<li><code>In Bed Time</code> - ActiLife-estimated start of in-bed interval for each day of the measurement,</li>
-<li><code>Out Bed Time</code> - ActiLife-estimated end of in-bed interval.</li>
+<li><code>Subject Name</code> - subject IDs corresponding to AC data,
+stored in <code>extdata_fnames</code>,</li>
+<li><code>In Bed Time</code> - ActiLife-estimated start of in-bed
+interval for each day of the measurement,</li>
+<li><code>Out Bed Time</code> - ActiLife-estimated end of in-bed
+interval.</li>
 </ul>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Read sleep details data file</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>SleepDetails_fname <span class="ot">&lt;-</span> <span class="st">&quot;BatchSleepExportDetails_2020-05-01_14-00-46.csv&quot;</span></span>
@@ -400,7 +674,9 @@ we use AC&lt;1853 (method’s default).</li>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Subject Name: chr  &quot;ID_1&quot; &quot;ID_1&quot; &quot;ID_1&quot; &quot;ID_1&quot; ...</span></span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ In Bed Time : chr  &quot;7/13/2018 9:18:00 PM&quot; &quot;7/14/2018 10:41:00 PM&quot; &quot;7/16/2018 7:46:00 PM&quot; &quot;7/17/2018 11:30:00 PM&quot; ...</span></span>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Out Bed Time: chr  &quot;7/14/2018 4:50:00 AM&quot; &quot;7/15/2018 5:40:00 AM&quot; &quot;7/17/2018 4:32:00 AM&quot; &quot;7/18/2018 6:32:00 AM&quot; ...</span></span></code></pre></div>
-<p>We transform dates stored as character into <code>POSIXct</code> object, and then use in/out-bed dates vectors in <code>activity_stats</code> method.</p>
+<p>We transform dates stored as character into <code>POSIXct</code>
+object, and then use in/out-bed dates vectors in
+<code>activity_stats</code> method.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>in_bed_time  <span class="ot">&lt;-</span> <span class="fu">mdy_hms</span>(SleepDetails_sub[, <span class="st">&quot;In Bed Time&quot;</span>])</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>out_bed_time <span class="ot">&lt;-</span> <span class="fu">mdy_hms</span>(SleepDetails_sub[, <span class="st">&quot;Out Bed Time&quot;</span>])</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -420,11 +696,16 @@ we use AC&lt;1853 (method’s default).</li>
 </div>
 <div id="components-of-activity_stats-method" class="section level1">
 <h1>Components of <code>activity_stats</code> method</h1>
-<p>The primary method <code>activity_stats</code> is composed of several steps implemented in their respective functions. Below, we demonstrate how to produce <code>activity_stats</code> results step by step with these functions.</p>
+<p>The primary method <code>activity_stats</code> is composed of several
+steps implemented in their respective functions. Below, we demonstrate
+how to produce <code>activity_stats</code> results step by step with
+these functions.</p>
 <p>We reuse the objects:</p>
 <ul>
-<li><code>acc</code> - a numeric vector; minute-level activity counts data,</li>
-<li><code>acc_ts</code> - a <code>POSIXct</code> vector; minute-level time of <code>acc</code> data collection.</li>
+<li><code>acc</code> - a numeric vector; minute-level activity counts
+data,</li>
+<li><code>acc_ts</code> - a <code>POSIXct</code> vector; minute-level
+time of <code>acc</code> data collection.</li>
 </ul>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">acc =</span> acc, <span class="at">acc_ts =</span> acc_ts)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(<span class="fu">head</span>(df, <span class="dv">3</span>), <span class="fu">tail</span>(df, <span class="dv">3</span>))</span>
@@ -436,12 +717,23 @@ we use AC&lt;1853 (method’s default).</li>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10079    0 2018-07-20 09:58:00</span></span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10080    0 2018-07-20 09:59:00</span></span></code></pre></div>
 <div id="expand-the-length-of-minute-level-ac-vector-to-integer-number-of-full-24-hour-periods-by-na-padding-with-midnight_to_midnight" class="section level3">
-<h3>Expand the length of minute-level AC vector to integer number of full 24-hour periods by NA-padding with <code>midnight_to_midnight</code></h3>
+<h3>Expand the length of minute-level AC vector to integer number of
+full 24-hour periods by NA-padding with
+<code>midnight_to_midnight</code></h3>
 <ul>
-<li>In the returned vector, the first observation corresponds to the minute of <code>00:00-00:01</code> on the first day of data collection, and the last observation corresponds to the minute of <code>23:50-00:00</code> on the last day of data collection.</li>
-<li>Entries corresponding to non-measured minutes are filled with <code>NA</code>.</li>
+<li>In the returned vector, the first observation corresponds to the
+minute of <code>00:00-00:01</code> on the first day of data collection,
+and the last observation corresponds to the minute of
+<code>23:50-00:00</code> on the last day of data collection.</li>
+<li>Entries corresponding to non-measured minutes are filled with
+<code>NA</code>.</li>
 </ul>
-<p>Here, collected data cover total of <code>7*24*1440 = 10080</code> minutes (from <code>2018-07-13 10:00:00</code> to <code>2018-07-20 09:59:00</code>), but spans <code>8*24*1440 = 11520</code> minutes of full midnight-to-midnight days (from <code>2018-07-13 00:00:00</code> to <code>2018-07-20 23:59:00</code>).</p>
+<p>Here, collected data cover total of <code>7*24*1440 = 10080</code>
+minutes (from <code>2018-07-13 10:00:00</code> to
+<code>2018-07-20 09:59:00</code>), but spans
+<code>8*24*1440 = 11520</code> minutes of full midnight-to-midnight days
+(from <code>2018-07-13 00:00:00</code> to
+<code>2018-07-20 23:59:00</code>).</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>acc <span class="ot">&lt;-</span> <span class="fu">midnight_to_midnight</span>(<span class="at">acc =</span> acc, <span class="at">acc_ts =</span> acc_ts)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Vector length on non NA-obs, vector length after acc </span></span>
@@ -450,10 +742,17 @@ we use AC&lt;1853 (method’s default).</li>
 </div>
 <div id="get-wearnon-wear-flag-with-get_wear_flag" class="section level3">
 <h3>Get wear/non-wear flag with <code>get_wear_flag</code></h3>
-<p>Function <code>get_wear_flag</code> computes wear/non-wear flag (<code>1/0</code>) for each minute of activity counts data. Method implements wear/non-wear detection algorithm closely following that of Choi et al. (2011). See <code>?get_wear_flag</code> for more details and function arguments.</p>
+<p>Function <code>get_wear_flag</code> computes wear/non-wear flag
+(<code>1/0</code>) for each minute of activity counts data. Method
+implements wear/non-wear detection algorithm closely following that of
+Choi et al. (2011). See <code>?get_wear_flag</code> for more details and
+function arguments.</p>
 <ul>
-<li>The returned vector has value <code>1</code> for wear and <code>0</code> for non-wear flagged minute.</li>
-<li>If there is an <code>NA</code> entry in a data input vector, then the returned vector will have a corresponding entry set to <code>NA</code> too.</li>
+<li>The returned vector has value <code>1</code> for wear and
+<code>0</code> for non-wear flagged minute.</li>
+<li>If there is an <code>NA</code> entry in a data input vector, then
+the returned vector will have a corresponding entry set to
+<code>NA</code> too.</li>
 </ul>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>wear_flag <span class="ot">&lt;-</span> <span class="fu">get_wear_flag</span>(acc)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -463,9 +762,14 @@ we use AC&lt;1853 (method’s default).</li>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.583 1.000 0.874 0.679 1.000 1.000 1.000 0.338</span></span></code></pre></div>
 </div>
 <div id="get-validnon-valid-day-flag-with-get_valid_day_flag" class="section level3">
-<h3>Get valid/non-valid day flag with <code>get_valid_day_flag</code></h3>
-<p>Function <code>get_valid_day_flag</code> computes valid/non-valid day flag (<code>1/0</code>) for each minute of activity counts data. See <code>?get_valid_day_flag</code> for more details and function arguments.</p>
-<p>Here, 4 out of 8 days have more than 10% (144 minutes) of missing data.</p>
+<h3>Get valid/non-valid day flag with
+<code>get_valid_day_flag</code></h3>
+<p>Function <code>get_valid_day_flag</code> computes valid/non-valid day
+flag (<code>1/0</code>) for each minute of activity counts data. See
+<code>?get_valid_day_flag</code> for more details and function
+arguments.</p>
+<p>Here, 4 out of 8 days have more than 10% (144 minutes) of missing
+data.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>valid_day_flag <span class="ot">&lt;-</span> <span class="fu">get_valid_day_flag</span>(wear_flag)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Compute number of valid days</span></span>
@@ -475,7 +779,10 @@ we use AC&lt;1853 (method’s default).</li>
 </div>
 <div id="impute-missing-data-with-impute_missing_data" class="section level3">
 <h3>Impute missing data with <code>impute_missing_data</code></h3>
-<p>Function <code>impute_missing_data</code> imputes missing data in valid days based on the “average day profile”, a minute-wise average of wear-time AC across valid days. See <code>?get_valid_day_flag</code> for more details and function arguments.</p>
+<p>Function <code>impute_missing_data</code> imputes missing data in
+valid days based on the “average day profile”, a minute-wise average of
+wear-time AC across valid days. See <code>?get_valid_day_flag</code> for
+more details and function arguments.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Copies of original objects for the purpose of demonstration</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>acc_cpy  <span class="ot">&lt;-</span> acc</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>wear_flag_cpy <span class="ot">&lt;-</span> wear_flag</span>
@@ -495,7 +802,10 @@ we use AC&lt;1853 (method’s default).</li>
 </div>
 <div id="create-pa-characteristics-with-summarize_pa" class="section level3">
 <h3>Create PA characteristics with <code>summarize_PA</code></h3>
-<p>Finally, method <code>summarize_PA</code> computes PA summaries. Similarly as <code>activity_stats</code>, it accepts arguments to subset/exclude minutes. See <code>?activity_stats</code> for more details and function arguments.</p>
+<p>Finally, method <code>summarize_PA</code> computes PA summaries.
+Similarly as <code>activity_stats</code>, it accepts arguments to
+subset/exclude minutes. See <code>?activity_stats</code> for more
+details and function arguments.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize_PA</span>(acc, acc_ts, wear_flag, valid_day_flag) </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   n_days n_valid_days wear_time_on_valid_days     tac     tlac    ltac</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1      8            4                    1440 2826648 6429.838 14.8546</span></span>
@@ -503,7 +813,8 @@ we use AC&lt;1853 (method’s default).</li>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 0.1781782 0.09516215             499.5                940.5</span></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   no_of_active_bouts no_of_nonactive_bouts mean_active_bout mean_nonactive_bout</span></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                 89                  89.5          5.61236            10.50838</span></span></code></pre></div>
-<p>It returns the same results as the <code>activity_stats</code> function:</p>
+<p>It returns the same results as the <code>activity_stats</code>
+function:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">activity_stats</span>(dat<span class="sc">$</span>vectormagnitude, <span class="fu">ymd_hms</span>(dat<span class="sc">$</span>timestamp))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   n_days n_valid_days wear_time_on_valid_days     tac     tlac    ltac</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1      8            4                    1440 2826648 6429.838 14.8546</span></span>
